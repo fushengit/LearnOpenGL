@@ -212,6 +212,15 @@ GLubyte getMask()
 {
     GLubyte mask[128];
     FILE * fp;
+    fp = fopen("", "rb");
+    if (!fp) {
+        exit(0);
+    }
+    size_t size = sizeof(mask);
+    if (!fread(mask, size, 1, fp)) {
+        exit(0);
+    }
+    fclose(fp);
     
     return NULL;
 }
