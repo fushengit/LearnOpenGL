@@ -1,4 +1,6 @@
 ##GLKView&&GLKViewController实现
+### GLKView
+- 封装了帧缓存和管理层的逻辑。
 ### 自己实现GLKView
 - GLKView 是继承自UIView的，我们尝试自己创建一个继承自UIView的FGLKView实现GLKView的功能。
 - 每一个UIView都会有一个相关联的Cocoa touch自动创建Core Animation层，会调用`+layerClass`方法来确定需要创建什么类型的层。而GLKView返回的是一个CAEAGLLayer,我们需要重写这个方法![](media/01.png)
