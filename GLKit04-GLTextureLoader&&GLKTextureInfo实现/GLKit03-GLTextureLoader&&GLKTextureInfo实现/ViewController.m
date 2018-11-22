@@ -47,7 +47,7 @@ static const SenceVertex verteices[] = {
                                                              buffer:verteices
                                                               usage:GL_STATIC_DRAW];
     
-    FGLKTextureInfo *textureInfo = [FGLKTextureLoader textureWithCGImage:[UIImage imageNamed:@""].CGImage
+    FGLKTextureInfo *textureInfo = [FGLKTextureLoader textureWithCGImage:[UIImage imageNamed:@"flower"].CGImage
                                                                  options:NULL
                                                                    error:NULL];
     effect.texture2d0.name = textureInfo.name;
@@ -56,8 +56,8 @@ static const SenceVertex verteices[] = {
 
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    glClear(GL_COLOR_BUFFER_BIT);
     [effect prepareToDraw];
+    
     [vertexBuffer prepareToDraw:GLKVertexAttribPosition
           numberOfCoordinatices:3
                          offset:offsetof(SenceVertex, positionCoordinate)

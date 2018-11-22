@@ -29,6 +29,7 @@
                      stride * count,
                      data,
                      usage);
+        
     }
     return self;
 }
