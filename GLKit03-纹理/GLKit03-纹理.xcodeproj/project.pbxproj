@@ -13,6 +13,7 @@
 		12B0F24421A59BAA00B477EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B0F24321A59BAA00B477EB /* Assets.xcassets */; };
 		12B0F24721A59BAA00B477EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12B0F24521A59BAA00B477EB /* LaunchScreen.storyboard */; };
 		12B0F24A21A59BAA00B477EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B0F24921A59BAA00B477EB /* main.m */; };
+		974090BA21A6841D004B9A83 /* FGLVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 974090B921A6841D004B9A83 /* FGLVertexAttribArrayBuffer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		12B0F24621A59BAA00B477EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12B0F24821A59BAA00B477EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12B0F24921A59BAA00B477EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		974090B821A6841D004B9A83 /* FGLVertexAttribArrayBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGLVertexAttribArrayBuffer.h; sourceTree = "<group>"; };
+		974090B921A6841D004B9A83 /* FGLVertexAttribArrayBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGLVertexAttribArrayBuffer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				12B0F23B21A59BA800B477EB /* AppDelegate.m */,
 				12B0F23D21A59BA800B477EB /* ViewController.h */,
 				12B0F23E21A59BA800B477EB /* ViewController.m */,
+				974090B821A6841D004B9A83 /* FGLVertexAttribArrayBuffer.h */,
+				974090B921A6841D004B9A83 /* FGLVertexAttribArrayBuffer.m */,
 				12B0F24021A59BA800B477EB /* Main.storyboard */,
 				12B0F24321A59BAA00B477EB /* Assets.xcassets */,
 				12B0F24521A59BAA00B477EB /* LaunchScreen.storyboard */,
@@ -142,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12B0F23F21A59BA800B477EB /* ViewController.m in Sources */,
+				974090BA21A6841D004B9A83 /* FGLVertexAttribArrayBuffer.m in Sources */,
 				12B0F24A21A59BAA00B477EB /* main.m in Sources */,
 				12B0F23C21A59BA800B477EB /* AppDelegate.m in Sources */,
 			);
