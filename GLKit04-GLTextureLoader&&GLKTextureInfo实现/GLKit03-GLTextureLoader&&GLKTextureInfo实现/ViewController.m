@@ -18,8 +18,7 @@ typedef struct {
 static const SenceVertex verteices[] = {
     {{-0.5,0.5,0},{0,1}},
     {{-0.5,-0.5,0},{0,0}},
-    {{0.5,-0.5,0},{1,0}},
-    {{0.5,0.5,0},{1,1}},
+    {{0.5,-0.5,0},{1,0}}
 };
 
 @interface ViewController ()
@@ -37,11 +36,11 @@ static const SenceVertex verteices[] = {
     view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     [EAGLContext setCurrentContext:view.context];
     
-    effect = [[GLKBaseEffect alloc]init];
-    effect.constantColor = GLKVector4Make(1, 1, 1, 1);
-    effect.useConstantColor = true;
-    
     glClearColor(0, 0, 0, 1);
+    effect = [[GLKBaseEffect alloc]init];
+    effect.useConstantColor = true;
+    effect.constantColor = GLKVector4Make(1, 1, 1, 1);
+    
     vertexBuffer = [[FVertexAttribArrayBuffer alloc] initWithStride:sizeof(SenceVertex)
                                                      namberOfVertex:sizeof(verteices)/sizeof(SenceVertex)
                                                              buffer:verteices
@@ -57,7 +56,6 @@ static const SenceVertex verteices[] = {
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
     [effect prepareToDraw];
-    
     [vertexBuffer prepareToDraw:GLKVertexAttribPosition
           numberOfCoordinatices:3
                          offset:offsetof(SenceVertex, positionCoordinate)
@@ -66,9 +64,10 @@ static const SenceVertex verteices[] = {
           numberOfCoordinatices:2
                          offset:offsetof(SenceVertex, textureCoordinate)
                          enable:true];
+    
     [vertexBuffer drawMode:GL_TRIANGLES
            startOfVerteice:0
-          numberOfVerteice:4];
+          numberOfVerteice:3];
 }
 
 - (void)didReceiveMemoryWarning {

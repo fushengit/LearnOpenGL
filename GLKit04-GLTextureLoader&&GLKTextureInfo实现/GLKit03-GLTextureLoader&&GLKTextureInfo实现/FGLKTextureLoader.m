@@ -46,11 +46,9 @@
     GLuint name;
     GLsizei width;
     GLsizei height;
-    NSData *data;
-    [self resizedCGImage:cgImage
-                   width:&width
-                  height:&height
-                    data:data];
+    NSData *data= [self resizedCGImage:cgImage
+                                 width:&width
+                                height:&height];
     // step1
     glGenTextures(1, &name);
     // step2
@@ -71,27 +69,26 @@
                                     //GL_UNSIGNED_SHORT_5_5_5_1 将纹素中所有颜色用2个字节，16位保存。5位R,5位G,5位B,1位A
                  [data bytes]); // 需要被赋值到绑定的纹理缓存中的图片的像素颜色数据的指针
     
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     
     if (glGetError() != GL_NO_ERROR) {
         NSLog(@"load texture fail");
     }
     return [[FGLKTextureInfo alloc] initWith:name
-                                      target:GL_RGBA
+                                      target:GL_TEXTURE_2D
                                        width:width
                                       height:height];
 }
 
 
-+ (void)resizedCGImage:(CGImageRef)cgImage
++ (NSData*)resizedCGImage:(CGImageRef)cgImage
                  width:(GLsizei *)width
-                height:(GLsizei *)height
-                  data:(NSData *)data{
-    
+                height:(GLsizei *)height{
+    // 1. 获取原始像素尺寸
     size_t originalW = CGImageGetWidth(cgImage);
     size_t originalH = CGImageGetHeight(cgImage);
     
-    // 1. 计算长宽最接近的2的幂。
+    // 2. 将原始像素尺寸的长宽计算成 最接近的 2的幂， 得到我们期望的像素长宽。
     GLsizei pWidth = pow(2, 10);
     GLsizei pHeight = pow(2, 10);
     for (int i = 0; i < 9; i++) {
@@ -105,28 +102,49 @@
         }
     }
     
-    // 2. 开辟data空间
+    // 3. 将image重新绘制成我们期望的像素长宽，并将绘制完成后的图像数据存储在data里。
+    // 3.1 每个像素我们希望以GL_RGBA的方式存储，而且位编码类型是GL_UNSIGNED_BYTE。所以初始化data的长度是 w*h*4
     NSMutableData *mData = [NSMutableData dataWithLength: pWidth * pHeight * 4];
+    // 3.2 选择一个颜色填充模式，这里使用RGB。
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate([mData mutableBytes],
-                                                 pWidth,
-                                                 pHeight,
-                                                 8,
-                                                 pWidth * 4,
-                                                 colorSpace,
-                                                 kCGImageAlphaPremultipliedLast);
+    // 3.3 创建一个文 用于保存图像操作信息。
+    CGContextRef context = CGBitmapContextCreate([mData mutableBytes],  //数据保存指针
+                                                 pWidth,                //像素宽
+                                                 pHeight,               //像素高
+                                                 8,                     //每个像素中的每个颜色元素所需要的bits
+                                                 pWidth * 4,            //每一行需要bytes
+                                                 colorSpace,            //颜色填充模式
+                                                 kCGImageAlphaPremultipliedLast); //Alpha的位置
     CGColorSpaceRelease(colorSpace);
-    CGContextDrawImage(context, CGRectMake(0, 0, pWidth, pHeight), cgImage);
     
+    /*
+     Core Graphics 以原点在左上角，Y轴向下的形式来保存图片的.
+     而纹理坐标系 原点在左下角,T轴向上。
+     
+                                T
+     0-------------> X         /\
+     |                          |
+     |                          |
+     |                          |
+     |                          |
+     \/                         0---------------> S
+     Y
+     
+     所以需要翻转一下
+     */
     
+    // 向上移动 pHeight
     CGContextTranslateCTM (context, 0, pHeight);
+    // X *1 ，Y * -1
     CGContextScaleCTM (context, 1.0, -1.0);
-    
+    // 开始绘图
+    CGContextDrawImage(context, CGRectMake(0, 0, pWidth, pHeight), cgImage);
+    // 销毁上下文
     CGContextRelease(context);
     
     *width = pWidth;
     *height = pHeight;
-    data = mData;
+    return mData;
 }
 
 @end

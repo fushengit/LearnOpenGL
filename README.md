@@ -23,5 +23,10 @@
 - MIP贴图
 - 使用纹理贴图
 
+## [GLTextureLoader && GLKTextureInfo 实现](markdown/GLTextureLoader && GLKTextureInfo 实现.md)
+- 纹理缓存的使用步骤。
+- 颜色元素的强度。
+- Core Graphics图形转换。
+
 
 
