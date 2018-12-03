@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		97C5A94C21B532A2000E939B /* beetle.png in Resources */ = {isa = PBXBuildFile; fileRef = 97C5A94B21B532A2000E939B /* beetle.png */; };
+		97C5A94E21B533A5000E939B /* leaves.gif in Resources */ = {isa = PBXBuildFile; fileRef = 97C5A94D21B533A5000E939B /* leaves.gif */; };
+		97C5A95121B54672000E939B /* FProgramUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C5A95021B54672000E939B /* FProgramUnit.m */; };
+		97C5A95421B54841000E939B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C5A95321B54841000E939B /* GLKit.framework */; };
+		97C5A95621B55E90000E939B /* vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 97C5A95521B55E90000E939B /* vertex.glsl */; };
+		97C5A95821B55EA4000E939B /* fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 97C5A95721B55EA4000E939B /* fragment.glsl */; };
+		97FE2C2921B5258700DE5069 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FE2C2821B5258700DE5069 /* AppDelegate.m */; };
+		97FE2C2C21B5258700DE5069 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FE2C2B21B5258700DE5069 /* ViewController.m */; };
+		97FE2C2F21B5258700DE5069 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97FE2C2D21B5258700DE5069 /* Main.storyboard */; };
+		97FE2C3121B5258800DE5069 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97FE2C3021B5258800DE5069 /* Assets.xcassets */; };
+		97FE2C3421B5258800DE5069 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97FE2C3221B5258800DE5069 /* LaunchScreen.storyboard */; };
+		97FE2C3721B5258800DE5069 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FE2C3621B5258800DE5069 /* main.m */; };
+		97FE2C3F21B52CDA00DE5069 /* FVertexAttribBufferArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FE2C3E21B52CDA00DE5069 /* FVertexAttribBufferArray.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		97C5A94B21B532A2000E939B /* beetle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beetle.png; path = "../../GLKit05-透明度&&混合/GLKit05-透明度&&混合/beetle.png"; sourceTree = "<group>"; };
+		97C5A94D21B533A5000E939B /* leaves.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = leaves.gif; path = "../../GLKit05-透明度&&混合/GLKit05-透明度&&混合/leaves.gif"; sourceTree = "<group>"; };
+		97C5A94F21B54672000E939B /* FProgramUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FProgramUnit.h; sourceTree = "<group>"; };
+		97C5A95021B54672000E939B /* FProgramUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FProgramUnit.m; sourceTree = "<group>"; };
+		97C5A95321B54841000E939B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		97C5A95521B55E90000E939B /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
+		97C5A95721B55EA4000E939B /* fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragment.glsl; sourceTree = "<group>"; };
+		97FE2C2421B5258700DE5069 /* GLKit07-自定义纹理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GLKit07-自定义纹理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97FE2C2721B5258700DE5069 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		97FE2C2821B5258700DE5069 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		97FE2C2A21B5258700DE5069 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		97FE2C2B21B5258700DE5069 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		97FE2C2E21B5258700DE5069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		97FE2C3021B5258800DE5069 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97FE2C3321B5258800DE5069 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		97FE2C3521B5258800DE5069 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97FE2C3621B5258800DE5069 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		97FE2C3D21B52CDA00DE5069 /* FVertexAttribBufferArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FVertexAttribBufferArray.h; sourceTree = "<group>"; };
+		97FE2C3E21B52CDA00DE5069 /* FVertexAttribBufferArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FVertexAttribBufferArray.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		97FE2C2121B5258700DE5069 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97C5A95421B54841000E939B /* GLKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		97C5A95221B54841000E939B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97C5A95321B54841000E939B /* GLKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97FE2C1B21B5258700DE5069 = {
+			isa = PBXGroup;
+			children = (
+				97FE2C2621B5258700DE5069 /* GLKit07-自定义纹理 */,
+				97FE2C2521B5258700DE5069 /* Products */,
+				97C5A95221B54841000E939B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		97FE2C2521B5258700DE5069 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97FE2C2421B5258700DE5069 /* GLKit07-自定义纹理.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97FE2C2621B5258700DE5069 /* GLKit07-自定义纹理 */ = {
+			isa = PBXGroup;
+			children = (
+				97FE2C2721B5258700DE5069 /* AppDelegate.h */,
+				97FE2C2821B5258700DE5069 /* AppDelegate.m */,
+				97FE2C2A21B5258700DE5069 /* ViewController.h */,
+				97FE2C2B21B5258700DE5069 /* ViewController.m */,
+				97FE2C3D21B52CDA00DE5069 /* FVertexAttribBufferArray.h */,
+				97FE2C3E21B52CDA00DE5069 /* FVertexAttribBufferArray.m */,
+				97C5A94F21B54672000E939B /* FProgramUnit.h */,
+				97C5A95021B54672000E939B /* FProgramUnit.m */,
+				97C5A94B21B532A2000E939B /* beetle.png */,
+				97C5A94D21B533A5000E939B /* leaves.gif */,
+				97C5A95521B55E90000E939B /* vertex.glsl */,
+				97C5A95721B55EA4000E939B /* fragment.glsl */,
+				97FE2C2D21B5258700DE5069 /* Main.storyboard */,
+				97FE2C3021B5258800DE5069 /* Assets.xcassets */,
+				97FE2C3221B5258800DE5069 /* LaunchScreen.storyboard */,
+				97FE2C3521B5258800DE5069 /* Info.plist */,
+				97FE2C3621B5258800DE5069 /* main.m */,
+			);
+			path = "GLKit07-自定义纹理";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		97FE2C2321B5258700DE5069 /* GLKit07-自定义纹理 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97FE2C3A21B5258800DE5069 /* Build configuration list for PBXNativeTarget "GLKit07-自定义纹理" */;
+			buildPhases = (
+				97FE2C2021B5258700DE5069 /* Sources */,
+				97FE2C2121B5258700DE5069 /* Frameworks */,
+				97FE2C2221B5258700DE5069 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GLKit07-自定义纹理";
+			productName = "GLKit07-自定义纹理";
+			productReference = 97FE2C2421B5258700DE5069 /* GLKit07-自定义纹理.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97FE2C1C21B5258700DE5069 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Fu,Sheng";
+				TargetAttributes = {
+					97FE2C2321B5258700DE5069 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 97FE2C1F21B5258700DE5069 /* Build configuration list for PBXProject "GLKit07-自定义纹理" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 97FE2C1B21B5258700DE5069;
+			productRefGroup = 97FE2C2521B5258700DE5069 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				97FE2C2321B5258700DE5069 /* GLKit07-自定义纹理 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		97FE2C2221B5258700DE5069 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97FE2C3421B5258800DE5069 /* LaunchScreen.storyboard in Resources */,
+				97C5A94E21B533A5000E939B /* leaves.gif in Resources */,
+				97FE2C3121B5258800DE5069 /* Assets.xcassets in Resources */,
+				97C5A95621B55E90000E939B /* vertex.glsl in Resources */,
+				97C5A94C21B532A2000E939B /* beetle.png in Resources */,
+				97C5A95821B55EA4000E939B /* fragment.glsl in Resources */,
+				97FE2C2F21B5258700DE5069 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97FE2C2021B5258700DE5069 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97FE2C3F21B52CDA00DE5069 /* FVertexAttribBufferArray.m in Sources */,
+				97FE2C2C21B5258700DE5069 /* ViewController.m in Sources */,
+				97FE2C3721B5258800DE5069 /* main.m in Sources */,
+				97C5A95121B54672000E939B /* FProgramUnit.m in Sources */,
+				97FE2C2921B5258700DE5069 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		97FE2C2D21B5258700DE5069 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97FE2C2E21B5258700DE5069 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		97FE2C3221B5258800DE5069 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97FE2C3321B5258800DE5069 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		97FE2C3821B5258800DE5069 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		97FE2C3921B5258800DE5069 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		97FE2C3B21B5258800DE5069 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "GLKit07-自定义纹理/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.baidu.com.GLKit07------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97FE2C3C21B5258800DE5069 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "GLKit07-自定义纹理/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.baidu.com.GLKit07------";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97FE2C1F21B5258700DE5069 /* Build configuration list for PBXProject "GLKit07-自定义纹理" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97FE2C3821B5258800DE5069 /* Debug */,
+				97FE2C3921B5258800DE5069 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97FE2C3A21B5258800DE5069 /* Build configuration list for PBXNativeTarget "GLKit07-自定义纹理" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97FE2C3B21B5258800DE5069 /* Debug */,
+				97FE2C3C21B5258800DE5069 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97FE2C1C21B5258700DE5069 /* Project object */;
+}
