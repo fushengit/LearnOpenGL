@@ -36,6 +36,13 @@
     }
     return self;
 }
+
+- (void)dealloc {
+    if (_name) {
+        glDeleteTextures(1, &_name);
+        _name = 0;
+    }
+}
 @end
 
 @implementation FGLKTextureLoader
@@ -79,6 +86,7 @@
                                        width:width
                                       height:height];
 }
+
 
 
 + (NSData*)resizedCGImage:(CGImageRef)cgImage

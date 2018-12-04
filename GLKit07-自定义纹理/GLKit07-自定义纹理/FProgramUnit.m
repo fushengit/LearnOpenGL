@@ -24,7 +24,6 @@
 {
     self = [super init];
     if (self) {
-        // step program 1
         program = glCreateProgram();
         GLuint vertexShader = [self createShader:GL_VERTEX_SHADER shaderPath:VertexShaderPath];
         GLuint fragmentShader = [self createShader:GL_FRAGMENT_SHADER shaderPath:fragmentShaderPath];
@@ -39,16 +38,13 @@
             return nil;
         }
         
-        // step program 2
         glAttachShader(program, vertexShader);
         glAttachShader(program, fragmentShader);
         
-        // step program 3
         for (NSString *str in attribLocation.allKeys) {
             glBindAttribLocation(program, attribLocation[str].unsignedIntValue, str.UTF8String);
         }
         
-        // step program 4
         glLinkProgram(program);
         GLint status;
         glGetProgramiv(program,
@@ -62,12 +58,10 @@
             return nil;
         }
         
-        // step program 5
         for (NSString *str in uniformLocation.allKeys) {
             uniformLocation[str] = @(glGetUniformLocation(program, str.UTF8String));
         }
         
-        // step program 6
         glDetachShader(program, vertexShader);
         glDeleteShader(vertexShader);
         glDetachShader(program, fragmentShader);
@@ -98,20 +92,13 @@
         return 0;
     }
     const GLchar * shaderC = shader.UTF8String;
-    GLint length = 0;
     // step shader 1
     GLuint name = glCreateShader(type);
     // step 2
     glShaderSource(name,
                    1,
                    &shaderC,
-                   &length);
-    if (length <= 0) {
-        // step shader 4
-        glDeleteShader(name);
-        NSLog(@"glShaderSource fail type = %d, path = %@",true, path);
-        return 0;
-    }
+                   NULL);
     // step shader 3
     GLint status;
     glCompileShader(name);

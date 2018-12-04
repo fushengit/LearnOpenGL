@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "FVertexAttribBufferArray.h"
+#import "FProgramUnit.h"
 
 typedef struct {
     GLKVector3 positionCoordinate;
@@ -66,6 +67,10 @@ static SenceVertix vertices[] = {
 {
     GLKBaseEffect *effect;
     FVertexAttribBufferArray *bufferArray;
+    FProgramUnit *program;
+    NSMutableDictionary<NSString *,NSNumber *> *uniformDict;
+    GLKMatrix4 modeMat;
+    float radians;
 }
 
 @end
@@ -96,6 +101,20 @@ static SenceVertix vertices[] = {
     
     effect.texture2d0.target = info.target;
     effect.texture2d0.name = info.name;
+    
+    uniformDict = [@{
+                    @"mMode": @(0),
+                    @"uSampler0":@(0)
+                    } mutableCopy];
+    program = [[FProgramUnit alloc] initWithVertexShaderPath:[[NSBundle mainBundle]pathForResource:@"vertex" ofType:@"glsl"]
+                                          fragmentShaderPath:[[NSBundle mainBundle]pathForResource:@"fragment" ofType:@"glsl"]
+                                              attribLocation:@{
+                                                               @"aPosition":@(GLKVertexAttribPosition),
+                                                               @"aTextureCoord0":@(GLKVertexAttribTexCoord0),
+                                                               }
+                                             uniformLocation:uniformDict];
+    modeMat = GLKMatrix4Identity;
+    radians = M_PI/360;
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
@@ -111,11 +130,15 @@ static SenceVertix vertices[] = {
     [bufferArray draw:GL_TRIANGLES
                 start:0
      numberOfVertices:sizeof(vertices)/sizeof(SenceVertix)];
+    
+    [program use];
+    glUniform1i(uniformDict[@"uSampler0"].unsignedIntValue, 0);
+    glUniformMatrix4fv(uniformDict[@"mMode"].unsignedIntValue, 1, GL_FALSE, modeMat.m);
+    glDrawArrays(GL_TRIANGLES, 0, sizeof(vertices)/sizeof(SenceVertix));
 }
 
 - (void)update {
-
-    
+    modeMat = GLKMatrix4Rotate(modeMat, radians, 1, 0, 0);
 }
 
 @end
